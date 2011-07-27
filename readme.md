@@ -70,7 +70,7 @@ Both Selected Tags and Available Tags are sorted alphabetically. Sorting in a
 way that allows a tag to be found easily is essential to making the interface
 fast to work with.
 
-This plugin has a potentially significant issue for some users and blogs: is
+This plugin has a potentially significant issue for some users and blogs: it
 displays tags for clicking. If your blog has thousands of tags, for example, a
 click-tagging interface is not going to be an improved experience over the
 traditional tagging interface. Click Tagging is best suited to blogs that have
