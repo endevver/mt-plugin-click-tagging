@@ -1,0 +1,29 @@
+id:             clicktagging
+key:            clicktagging
+name:           'Click Tagging'
+description:    'Provides an interface to select tags for an entry by clicking to select a tag, rather than typing.'
+author_name:    'Endevver, LLC'
+author_link:    http://www.endevver.com/
+static_version: 1
+version:        1.0
+
+callbacks:
+    MT::App::CMS::template_param.edit_entry: ClickTagging::Plugin::edit_entry_template_param
+
+applications:
+    cms:
+        methods:
+            clicktagging_load_available_tags: ClickTagging::Plugin::load_available_tags
+
+settings:
+    enable_click_tagging:
+        default: 0
+        scope: blog
+    tag_group_size:
+        default: 25
+        scope: blog
+    restrict_tag_creation:
+        default: 0
+        scope: blog
+
+blog_config_template: 'tmpl/config.mtml'

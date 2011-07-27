@@ -1,0 +1,35 @@
+<mtapp:Setting
+    id="click_tagging_enable"
+    label="Enable Click Tagging">
+    <input type="checkbox" name="enable_click_tagging" id="enable_click_tagging" value="1" <mt:If name="enable_click_tagging">checked</mt:If> />
+    <label for="enable_click_tagging">Enable Click Tagging on this blog</label>
+</mtapp:Setting>
+
+<mtapp:Setting
+    id="tag_group_size"
+    label="Tag Group Size"
+    hint="Specify the number of Available Tags to be displayed by default."
+    show_hint="1">
+    <select name="tag_group_size">
+        <option value="10"<mt:If name="tag_group_size" eq="10"> selected</mt:If>>10</option>
+        <option value="25"<mt:If name="tag_group_size" eq="25"> selected</mt:If>>25</option>
+        <option value="50"<mt:If name="tag_group_size" eq="50"> selected</mt:If>>50</option>
+        <option value="75"<mt:If name="tag_group_size" eq="75"> selected</mt:If>>75</option>
+        <option value="100"<mt:If name="tag_group_size" eq="100"> selected</mt:If>>100</option>
+        <option value="125"<mt:If name="tag_group_size" eq="125"> selected</mt:If>>125</option>
+        <option value="150"<mt:If name="tag_group_size" eq="150"> selected</mt:If>>150</option>
+        <option value="200"<mt:If name="tag_group_size" eq="200"> selected</mt:If>>200</option>
+        <option value="250"<mt:If name="tag_group_size" eq="250"> selected</mt:If>>250</option>
+        <option value="300"<mt:If name="tag_group_size" eq="300"> selected</mt:If>>300</option>
+        <option value="400"<mt:If name="tag_group_size" eq="400"> selected</mt:If>>400</option>
+        <option value="500"<mt:If name="tag_group_size" eq="500"> selected</mt:If>>500</option>
+    </select>
+</mtapp:Setting>
+
+<mtapp:Setting
+    id="restrict_tag_creation"
+    label="Restrict Tag Creation">
+    <input type="checkbox" name="restrict_tag_creation" id="restrict_tag_creation" value="1" <mt:If name="restrict_tag_creation">checked</mt:If> />
+    <label for="restrict_tag_creation">Only allow System Administrators and Blog Administrators to create new tags.</label>
+</mtapp:Setting>
+

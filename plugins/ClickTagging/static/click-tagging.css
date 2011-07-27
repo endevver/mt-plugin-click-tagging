@@ -1,0 +1,47 @@
+#click-tagging h4 {
+    float: left;
+    margin: 4px 10px 0 0;
+    color: #777;
+}
+
+#click-tagging div.selected-tags,
+#click-tagging div.available-tags {
+    margin-bottom: 6px;
+    clear: right;
+    width: 100%;
+    min-height: 24px;
+}
+
+#click-tagging span {
+    display: inline-block;
+    margin: 2px 4px 2px 0;
+    padding: 2px 6px;
+    background: #eee;
+    cursor: pointer;
+}
+
+#click-tagging div.selected-tags span {
+    background: #e7f0f6;
+}
+
+/* All tags appear in the Available Tags section. Tags that are already used 
+   in the Selected Tags area still exist in the Available Tags section, they 
+   are just hidden */
+#click-tagging span.already-selected { display: none; }
+
+
+#click-tagging .tag-group {
+    display: none;
+}
+
+#click-tagging-new-tag-container {
+    clear: both;
+}
+
+input#click-tagging-new-tag {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* The placeholder is used to add tags to the Selected Tags area. */
+#click-tagging-tag-placeholder { display: none; }
