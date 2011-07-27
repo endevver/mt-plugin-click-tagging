@@ -16,6 +16,7 @@ The Click Tagging plugin for Movable Type and Melody provides an alternate taggi
   initial page load, allowing users to begin writing or editing immediately.
 
 A picture is worth a thousand words:
+
 ![Click Tagging Screenshot](https://github.com/endevver/mt-plugin-click-tagging/blob/master/click-tagging.png?raw=true)
 
 # Prerequisites
