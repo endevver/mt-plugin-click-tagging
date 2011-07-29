@@ -3,6 +3,23 @@ package ClickTagging::Plugin;
 use strict;
 use warnings;
 
+# This is responsible for loading jQuery in the head of the site.
+sub update_template_jquery {
+    my ($cb, $app, $template) = @_;
+
+    # Check if jQuery has already been loaded. If it has, just skip this.
+    unless ( $$template =~ m/jquery/) {
+        # Include jQuery as part of the js_include, used on the 
+        # include/header.tmpl, which is used on all pages.
+        my $old = q{<mt:setvarblock name="js_include" append="1">};
+        my $new = <<'END';
+    <script type="text/javascript" src="<mt:StaticWebPath>jquery/jquery.js"></script>
+</head>
+END
+        $$template =~ s/$old/$old$new/;
+    }
+}
+
 sub edit_entry_template_param {
     my ($cb, $app, $params, $template) = @_;
     my $plugin = MT->component('clicktagging');

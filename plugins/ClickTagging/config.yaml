@@ -5,10 +5,15 @@ description:    'Provides an interface to select tags for an entry by clicking t
 author_name:    'Endevver, LLC'
 author_link:    http://www.endevver.com/
 static_version: 1
-version:        1.0
+version:        1.0.1
 
 callbacks:
     MT::App::CMS::template_param.edit_entry: ClickTagging::Plugin::edit_entry_template_param
+    # Load jQuery.
+    MT::App::CMS::template_source.edit_entry:    ClickTagging::Plugin::update_template_jquery
+    MT::App::CMS::template_source.edit_author:   ClickTagging::Plugin::update_template_jquery
+    MT::App::CMS::template_source.edit_category: ClickTagging::Plugin::update_template_jquery
+    MT::App::CMS::template_source.edit_folder:   ClickTagging::Plugin::update_template_jquery
 
 applications:
     cms:

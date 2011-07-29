@@ -26,6 +26,9 @@ A picture is worth a thousand words:
 * [Melody Compatibility
   Layer](https://github.com/endevver/mt-plugin-melody-compat/downloads) (for
   users of Movable Type)
+* [Config Assistant](
+  https://github.com/openmelody/mt-plugin-configassistant/downloads)
+  (for users of Movable Type)
 
 # Installation
 
