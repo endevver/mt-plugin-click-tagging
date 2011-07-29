@@ -62,6 +62,7 @@ sub edit_entry_template_param {
 
     # The following HTML allows users to create new tags. Should it be 
     # displayed? Check below.
+    my $create_new_tag_hint = ''; # Set below, if used.
     my $create_new_tag_html .= '<div class="click-tagging-new-tag-container">'
         . '<h4>Add a New Tag</h4>'
         . '<input type="text" id="click-tagging-new-tag" autocomplete="off" />'
@@ -69,7 +70,7 @@ sub edit_entry_template_param {
 
     # Is tag creation restricted?
     if ( $plugin->get_config_value('restrict_tag_creation', 'blog:'.$blog_id) ) {
-        
+
         # Tag cration is restricted. Show the tag creation HTML only if the 
         # user is a System Administrator or Blog Administrator.
         if (
@@ -80,12 +81,20 @@ sub edit_entry_template_param {
             )
         ) {
             $new_html .= $create_new_tag_html;
+            $create_new_tag_hint = 'Create a tag by typing it in the Add a '
+                . 'New Tag field; pause typing and it will be created.';
         }
     }
     else { # Tag creation is unrestricted. Allow any user to add new tags.
         $new_html .= $create_new_tag_html;
+        $create_new_tag_hint = 'Create a tag by typing it in the Add a '
+            . 'New Tag field; pause typing and it will be created.';
     }
 
+    # Add a hint about how to use the tags.
+    $new_html .= '<div class="hint">'
+        . 'Click a tag name to add or remove it from this '
+        . '<mt:Var name="object_type">. ' . $create_new_tag_hint . '</div>';
 
     $new_html .= <<'HTML';
 </div>
