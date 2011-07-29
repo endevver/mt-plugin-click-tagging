@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
         // setting it effectively causes the timer to be restarted after each
         // character typed.
         clearTimeout(typing_timer);
-        typing_timer = setTimeout(processNewTags, 2000);
+        typing_timer = setTimeout(processNewTags, 3000);
     });
 
     function processNewTags() {
