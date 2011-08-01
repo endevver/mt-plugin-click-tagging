@@ -62,7 +62,7 @@ sub edit_entry_template_param {
 
     # The following HTML allows users to create new tags. Should it be 
     # displayed? Check below.
-    my $create_new_tag_hint = ''; # Set below, if used.
+    my $create_new_tag_hint = ''; # Set the admin hint below, if used.
     my $create_new_tag_html .= '<div class="click-tagging-new-tag-container">'
         . '<h4>Add a New Tag</h4>'
         . '<input type="text" id="click-tagging-new-tag" autocomplete="off" />'
@@ -91,11 +91,6 @@ sub edit_entry_template_param {
             . 'New Tag field; pause typing and it will be created.';
     }
 
-    # Add a hint about how to use the tags.
-    $new_html .= '<div class="hint">'
-        . 'Click a tag name to add or remove it from this '
-        . '<mt:Var name="object_type">. ' . $create_new_tag_hint . '</div>';
-
     $new_html .= <<'HTML';
 </div>
 <mt:Ignore>
@@ -114,6 +109,16 @@ HTML
     # Hide the Tags label/field title, effectively making the Selected Tags 
     # and Avaialble Tags headers the title.
     $tags_field->setAttribute('label','');
+
+    # Add a hint about how to use the tags. Include the Add a New Tag hint for
+    # admins, if set above.
+    my $hint_text .= 'Click an Available Tag to add it to this '
+        . '<mt:Var name="object_type">. Click a Selected Tag to remove it '
+        . 'from this <mt:Var name="object_type">. ' 
+        . $create_new_tag_hint;
+
+    $tags_field->setAttribute('hint', $hint_text);
+    $tags_field->setAttribute('show_hint', 1); # Hints are hidden by default.
 
     my $tags_html = $tags_field->innerHTML;
     # Remove the border around the Tags input field.
