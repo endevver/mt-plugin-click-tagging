@@ -18,6 +18,8 @@ sub update_template_jquery {
 END
         $$template =~ s/$old/$old$new/;
     }
+
+    1; # Callbacks should always return true.
 }
 
 sub edit_entry_template_param {
@@ -128,6 +130,8 @@ HTML
 
     # Update the tags field with all this new info!
     $tags_field->innerHTML($tags_html . $new_html);
+
+    1; # Callbacks should always return true.
 }
 
 # This is responsible for loading the available tags. It's called in an AJAX
