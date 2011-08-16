@@ -5,7 +5,7 @@ description:    'Provides an interface to select tags for an entry by clicking t
 author_name:    'Endevver, LLC'
 author_link:    http://www.endevver.com/
 static_version: 2
-version:        1.0.3
+version:        1.0.4
 
 callbacks:
     MT::App::CMS::template_param.edit_entry: ClickTagging::Plugin::edit_entry_template_param
