@@ -153,7 +153,7 @@ sub load_available_tags {
             push @obj_tags, $tag->name;
         }
     }
-    
+
     # This is responsible for pulling together the available tags that can be
     # clicked.
     my $available_tags = _build_available_tags_list({
@@ -172,6 +172,17 @@ sub _build_available_tags_list {
     my $obj_type = $arg_ref->{obj_type};
     my @obj_tags = @{ $arg_ref->{obj_tags} };
     my $plugin   = MT->component('clicktagging');
+
+    # Check if any tags exist on this blog. If not, just return a message to 
+    # that effect.
+    my $exists = MT->model('objecttag')->exist({ 
+        blog_id           => $blog_id,
+        object_datasource => 'entry',
+    });
+
+    if (!$exists) {
+        return '<p>No entry tags exist in this blog.</p>';
+    }
 
     # We want to build a list of the most-used tags in this blog. Using the
     # mt:Tags block simply doesn't work correctly in the admin interface to
