@@ -2,8 +2,9 @@ id:             clicktagging
 key:            clicktagging
 name:           'Click Tagging'
 description:    'Provides an interface to select tags for an entry by clicking to select a tag, rather than typing.'
-author_name:    'Endevver, LLC'
+author_name:    'Dan Wolfgang, Endevver, LLC'
 author_link:    http://www.endevver.com/
+plugin_link:    https://github.com/endevver/mt-plugin-click-tagging
 static_version: 2
 version:        1.0.5
 
